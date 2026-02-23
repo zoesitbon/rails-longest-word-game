@@ -1,0 +1,19 @@
+<h1 class="text-center mt-3">Résultat</h1>
+
+<p class="text-center">
+  Votre mot : <strong><%= @word %></strong>
+</p>
+
+<p class="text-center">
+  <% if !@can_be_formed %>
+    Le mot ne peut pas être formé avec la grille.
+  <% elsif !@valid_word %>
+    Le mot est valide selon la grille mais pas en anglais.
+  <% else %>
+    Bravo ! Votre score : <%= @score %>
+  <% end %>
+</p>
+
+<div class="text-center mt-3">
+  <%= link_to "Nouvelle partie", new_path, class: "btn btn-primary" %>
+</div>
